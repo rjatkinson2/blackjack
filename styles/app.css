@@ -1,16 +1,69 @@
 .card {
   float: left;
-  border: solid 1px black;
+  border: solid 1px grey;
   width: 100px;
-  border-radius: 5px;
   height: 140px;
+  border-radius: 5px;
   margin-right: 20px;
+  background-color: white;
+  background-image: url('http://www.morethanpaper.com/8.5x11Sheets/PaperSoPretty/Images/2009/Blank/Thumbnails/DP799%20Playing%20Cards-Blank.jpg');
+  background-size:   contain;                      /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/*.container {
+  width: 800px;
+  height: 800px;
+}*/
+
+.table {
+  margin: 0 200px;
+  padding: 0 300px;
+  background-image: url('https://lh3.ggpht.com/UBu6nsz-oQAjreJa8a7qAfFTzsmbrRZDQ3ZQQ49Hp0qrTSFX1_1I2NWu8SX4ezbSZUw=h900-rw');
+  background-size:   contain;                      /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 1000px;
+  width: 1000px;
 }
 
 .covered {
+  background-image: none;
   background-color: black;
 }
 
 .hand {
   overflow: auto;
 }
+
+.dealer-hand-container {
+margin-left: 395px;
+margin-top: 191px;
+}
+
+.player-hand-container {
+margin-left: 395px;
+}
+
+.card span {
+  padding-left: 26px;
+  display: block;
+}
+
+.card span:nth-child(1) {
+  margin-top: 39px;
+}
+
+/*h2:nth-child(1) {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: block;
+}
+h2 {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  display: block;
+}*/
