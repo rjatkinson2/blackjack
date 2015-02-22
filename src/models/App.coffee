@@ -20,15 +20,18 @@ class window.App extends Backbone.Model
         else
           context.set 'playerScore', scoreMin
           console.log "Hit or Stand!"
-      else console.log 'Hit or Stand!'
+      else
+        context.set 'playerScore', scoreMax
+        console.log 'Hit or Stand!'
       return
 
-    @get('playerHand').on 'stand', (card,hand) ->
-      console.log 'stand'
+    @get('playerHand').on 'stand', (hand) ->
+      console.log 'stand listener triggered'
+      # console.log 'stand - playerScore: ' + hand.scores()[1]
       context.set 'playerTurn', false
       context.get('dealerHand').at(0).flip()
       context.set 'dealerScore', context.get('dealerHand').scores()[1]
-      console.log 'dealerScore: ' + context.get 'dealerScore'
+      # console.log 'dealerScore: ' + context.get 'dealerScore'
       dealerScore = context.get 'dealerScore'
       playerScore = context.get 'playerScore'
       if dealerScore > playerScore then console.log "Dealer Wins"
@@ -39,8 +42,8 @@ class window.App extends Backbone.Model
     @get('dealerHand').on 'add', (card,hand) ->
       dealerScore = hand.scores()[1]
       playerScore = context.get('playerScore')
-      console.log 'dealerScore: ' + dealerScore
-      console.log 'playerscore: ' + playerScore
+      # console.log 'dealerScore: ' + dealerScore
+      # console.log 'playerscore: ' + playerScore
       if dealerScore > 21 then console.log "Player Wins!"
       else if dealerScore > playerScore then console.log "Dealer Wins"
       else if dealerScore < 17 then context.get('dealerHand').hit()

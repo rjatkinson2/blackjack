@@ -1,4 +1,4 @@
-class window.Deck extends Backbone.Collection
+ class window.Deck extends Backbone.Collection
   model: Card
 
   initialize: ->
